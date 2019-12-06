@@ -1,0 +1,20 @@
+{
+    "name": "ganlvtech/php-buffer-pipeline",
+    "description": "Chunk manipulating data with buffered pipeline. Useful for workflow like fetching data from mysql or redis -> mapping data -> filtering data -> writing to local file.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ganlv",
+            "email": "ganlvtech@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "BufferPipeline\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.0.0"
+    }
+}
