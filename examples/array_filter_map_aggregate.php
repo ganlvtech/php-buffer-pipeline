@@ -2,7 +2,7 @@
 
 use BufferPipeline\BufferPipeline;
 
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 
 $sum = 0;
 
@@ -45,7 +45,7 @@ $sum = 0;
         }
         return [];
     })
-    ->buffer(100, 1) // 15 items chunk
+    ->buffer(10000, 1) // 15 items chunk
     ->pipe(function (array $inputs) { // map data
         return array_map(function ($item) {
             return $item * 10;
@@ -57,6 +57,6 @@ $sum = 0;
         $sum += array_sum($inputs);
         echo $counter, PHP_EOL;
     })
-    ->exec(10000); // pass arguments to generator and execute
+    ->exec(1000000000); // pass arguments to generator and execute
 
 echo 'Sum: ', $sum, PHP_EOL;
