@@ -29,7 +29,9 @@ class Buffer implements Pipeline
 
     public function __invoke(array $items, bool $is_final_flush = false)
     {
-        array_push($this->buffer, ...$items);
+        if ($items) {
+            array_push($this->buffer, ...$items);
+        }
         if ($is_final_flush) {
             $this->finalFlush();
         } else {
